@@ -1,0 +1,23 @@
+<h1>All the clues</h1>
+
+<b>Subject: <%=@post.title %> </b>
+<br>
+<i>Found by: <%=@post.user.email %> </i>
+<br>
+<%=@post.created_at.strftime("%b, %d, %Y") %>
+<br>
+<br>
+<b>Thoughts and Clues:</b> <%=@post.body %>
+<br>
+<br>
+<br>
+
+
+
+<%= link_to "Delete entry", user_post_path(@post.user, @post), method: :delete, confirm: "Are you sure?" %>
+<br>
+<%=link_to "Record new clue", new_user_post_path(@post.user, @post) %>
+<br>
+<br>
+
+<%= link_to "All my leads", user_posts_path(@post.user, @post) %>

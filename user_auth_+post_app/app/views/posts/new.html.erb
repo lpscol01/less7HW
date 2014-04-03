@@ -1,0 +1,10 @@
+<h1>Jot down your hunches</h1>
+
+<%=form_for [@user, @post] do |t| %>
+	<%=t.label :title, "Subject" %>  
+	<%=t.text_field :title %>
+	<%=t.label :body, "Findings" %>  
+	<%=t.text_field :body %>
+	<%=t.submit "Save" %>
+
+<% end %>

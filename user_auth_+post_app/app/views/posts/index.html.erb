@@ -1,0 +1,15 @@
+<h1>Detective log book:</h1>
+<h4><i><%=@user.email %></i></h4>
+
+<% @user.posts.each do |post| %>
+	
+	<b>Subject: <%=post.title %></b>
+	<br>
+	<b>Thoughts and Clues:</b> <%=post.body %>
+	<br>
+	<%= post.created_at.strftime("%b, %d, %Y") %>
+	<br>
+	<br>
+<% end %>
+
+<%=link_to "More clues?", new_user_post_path %>
